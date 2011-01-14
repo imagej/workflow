@@ -45,7 +45,7 @@ public class FinalizeTest extends TestCase {
         testComponentB.setOutputNames(new String[] { Output.DEFAULT });
 
 
-        WorkFlow workFlow1 = new WorkFlow();
+        Workflow workFlow1 = new Workflow();
         workFlow1.setName("workFlow1");
         workFlow1.add(testComponentA);
         workFlow1.add(testComponentB);

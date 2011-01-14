@@ -42,7 +42,7 @@ public class PluginWiringTest extends TestCase {
         PluginModule module2 = new PluginModule("loci.workflow.TestPlugin2");
 
         // create workflow, add & wire modules
-        IWorkFlow workflow = new WorkFlow();
+        IWorkflow workflow = new Workflow();
         workflow.setName("My Workflow");
         workflow.add(module1);
         workflow.add(module2);

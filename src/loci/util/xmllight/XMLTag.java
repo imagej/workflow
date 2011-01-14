@@ -11,7 +11,7 @@ package loci.util.xmllight;
  * @author Aivar Grislis
  */
 public class XMLTag {
-    static final String EMPTY_STRING = "";
+    public static final String EMPTY_STRING = "";
     private String m_name;
     private String m_content;
     private String m_remainder;

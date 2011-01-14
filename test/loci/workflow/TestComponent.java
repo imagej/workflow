@@ -72,25 +72,25 @@ public class TestComponent implements IModule {
 
         // add workflow tag and name
         xmlHelper.addTag(TESTCOMPONENT);
-        xmlHelper.addTagWithContent(WorkFlow.NAME, getName());
+        xmlHelper.addTagWithContent(Workflow.NAME, getName());
 
         // add inputs
-        xmlHelper.addTag(WorkFlow.INPUTS);
+        xmlHelper.addTag(Workflow.INPUTS);
         for (String name : m_inputNames) {
-            xmlHelper.addTag(WorkFlow.INPUT);
-            xmlHelper.addTagWithContent(WorkFlow.NAME, name);
-            xmlHelper.addEndTag(WorkFlow.INPUT);
+            xmlHelper.addTag(Workflow.INPUT);
+            xmlHelper.addTagWithContent(Workflow.NAME, name);
+            xmlHelper.addEndTag(Workflow.INPUT);
         }
-        xmlHelper.addEndTag(WorkFlow.INPUTS);
+        xmlHelper.addEndTag(Workflow.INPUTS);
 
         // add outputs
-        xmlHelper.addTag(WorkFlow.OUTPUTS);
+        xmlHelper.addTag(Workflow.OUTPUTS);
         for (String name : m_outputNames) {
-            xmlHelper.addTag(WorkFlow.OUTPUT);
-            xmlHelper.addTagWithContent(WorkFlow.NAME, name);
-            xmlHelper.addEndTag(WorkFlow.OUTPUT);
+            xmlHelper.addTag(Workflow.OUTPUT);
+            xmlHelper.addTagWithContent(Workflow.NAME, name);
+            xmlHelper.addEndTag(Workflow.OUTPUT);
         }
-        xmlHelper.addEndTag(WorkFlow.OUTPUTS);
+        xmlHelper.addEndTag(Workflow.OUTPUTS);
 
         // end workflow
         xmlHelper.addEndTag(TESTCOMPONENT);
@@ -120,7 +120,7 @@ public class TestComponent implements IModule {
             }
             xml = tag.getContent();
             tag = xmlHelper.getNextTag(xml);
-            if (!WorkFlow.NAME.equals(tag.getName())) {
+            if (!Workflow.NAME.equals(tag.getName())) {
                 throw new XMLException("Missing <name> for <workflow>");
             }
             setName(tag.getContent());
@@ -135,7 +135,7 @@ public class TestComponent implements IModule {
             // </inputs>
 
             tag = xmlHelper.getNextTag(xml);
-            if (!WorkFlow.INPUTS.equals(tag.getName())) {
+            if (!Workflow.INPUTS.equals(tag.getName())) {
                 throw new XMLException("Missing <inputs> within <testcomponent>");
             }
             String inputsXML = tag.getContent();
@@ -148,7 +148,7 @@ public class TestComponent implements IModule {
                     break;
                 }
 
-                if (!WorkFlow.INPUT.equals(tag.getName())) {
+                if (!Workflow.INPUT.equals(tag.getName())) {
                     throw new XMLException("Missing <input> within <inputs");
                 }
                 String inputXML = tag.getContent();
@@ -156,7 +156,7 @@ public class TestComponent implements IModule {
                 tag = xmlHelper.getNextTag(inputXML);
                 inputXML = tag.getRemainder();
 
-                if (!WorkFlow.NAME.equals(tag.getName())) {
+                if (!Workflow.NAME.equals(tag.getName())) {
                     throw new XMLException("Missing <name> within <input>");
                 }
                 String inName = tag.getContent();
@@ -172,7 +172,7 @@ public class TestComponent implements IModule {
             //    </output>
             //  </outputs>
             tag = xmlHelper.getNextTag(xml);
-            if (!WorkFlow.OUTPUTS.equals(tag.getName())) {
+            if (!Workflow.OUTPUTS.equals(tag.getName())) {
                 throw new XMLException("Missing <outputs> within <testcomponent>");
             }
             String outputsXML = tag.getContent();
@@ -185,7 +185,7 @@ public class TestComponent implements IModule {
                     break;
                 }
 
-                if (!WorkFlow.OUTPUT.equals(tag.getName())) {
+                if (!Workflow.OUTPUT.equals(tag.getName())) {
                     throw new XMLException("Missing <output> within <outputs>");
                 }
                 String outputXML = tag.getContent();
@@ -193,7 +193,7 @@ public class TestComponent implements IModule {
                 tag = xmlHelper.getNextTag(outputXML);
                 outputXML = tag.getRemainder();
 
-                if (!WorkFlow.NAME.equals(tag.getName())) {
+                if (!Workflow.NAME.equals(tag.getName())) {
                     throw new XMLException("Missing <name> within <output>");
                 }
                 String outName = tag.getContent();

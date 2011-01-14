@@ -53,7 +53,7 @@ public class SerializeDeserializeTest extends TestCase
         TestComponentFactory componentFactory = TestComponentFactory.getInstance();
         ModuleFactory.getInstance().register(TestComponent.TESTCOMPONENT, componentFactory);
 
-        WorkFlow workFlow1 = new WorkFlow();
+        Workflow workFlow1 = new Workflow();
         workFlow1.setName("workFlow1");
        // workFlow1.setModuleFactory(componentFactory);
         workFlow1.add(testComponentA);
@@ -66,7 +66,7 @@ public class SerializeDeserializeTest extends TestCase
         String xml1 = workFlow1.toXML();
         System.out.println("workFlow1 XML [\n" + xml1 + "]");
 
-        WorkFlow workFlow2 = new WorkFlow();
+        Workflow workFlow2 = new Workflow();
         workFlow2.fromXML(xml1);
         String xml2 = workFlow2.toXML();
 

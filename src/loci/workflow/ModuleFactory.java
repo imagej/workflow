@@ -21,7 +21,7 @@ public class ModuleFactory implements IModuleFactory {
     private Map<String, IModuleFactory> m_factories = new HashMap<String, IModuleFactory>();
     
     private ModuleFactory() {
-        register(WorkFlow.WORKFLOW, WorkFlowFactory.getInstance());
+        register(Workflow.WORKFLOW, WorkflowFactory.getInstance());
         //register(Component.COMPONENT, ComponentFactory.getInstance());
         register(PluginModule.PLUGIN, PluginModuleFactory.getInstance());
     }
