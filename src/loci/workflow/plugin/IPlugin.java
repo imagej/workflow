@@ -67,7 +67,7 @@ public interface IPlugin {
 
     /**
      * Puts the default output image to next in chain (if any).  Called from
-     * within implemenation.
+     * within implementation.
      *
      * @param image
      */
