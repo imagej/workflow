@@ -17,6 +17,7 @@
 
 	<name>Workflow</name>
 	<description>A library to facilitate efficient chaining of modules and plugins with various inputs and outputs.</description>
+	<inceptionYear>2010</inceptionYear>
 
 	<dependencies>
 		<dependency>
